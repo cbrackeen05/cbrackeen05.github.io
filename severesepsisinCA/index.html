@@ -14,6 +14,7 @@
          <br>in the United States an on average 30% of patients diagnosed with the disease do not survive. </p>
 </div>
 <svg width=100 height=350>
+  <rect></rect>
 </svg>
 </body>
   
@@ -22,6 +23,8 @@ var data = [4,8,15,16,23,42];
 d3.select('svg').selectAll('rect').data(data).append('rect')
 .attr("height","50")
 .attr("width",function(d){return d;})
+.attr("x",0)
+.attr("y",0)
 .attr("fill","blue")
   
 </script>
