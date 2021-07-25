@@ -19,13 +19,13 @@
 </body>
   
 <script>
-var data = [4,8,15,16,23,42];
-d3.select('svg').selectAll('rect').data(data).append('rect')
+var data = [40];
+d3.select('svg').selectAll('rect').data(data)
 .attr("height","50")
 .attr("width",function(d){return d;})
 .attr("x","0")
 .attr("y","0")
-.attr("fill","blue")
+//.attr("fill","blue")
   
 </script>
 </html>
