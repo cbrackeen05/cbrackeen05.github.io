@@ -21,6 +21,7 @@
 <circle fill='blue'></circle>
 <circle fill='purple'></circle>
 </svg>
+</body>
   
 <script>
 var data = [4,8,15,16,23,42];
@@ -28,6 +29,6 @@ d3.select('svg').selectAll('circle').data(data)
 .attr("cx","50")
 .attr("cy",function(d,i){return (i+1)*50;})
 .attr("r",function(d){return d;})
+  
 </script>
-</body>
 </html>
