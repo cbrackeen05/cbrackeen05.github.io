@@ -22,6 +22,7 @@ var data = [4,8,15,16,23,42];
 d3.select('svg').selectAll('rect').data(data).append('rect')
 .attr("height","50")
 .attr("width",function(d){return d;})
+.attr("fill","blue")
   
 </script>
 </html>
