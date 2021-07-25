@@ -23,7 +23,7 @@ var data = [40,40];
 d3.select('svg').selectAll('rect').data(data).append('rect')
 .attr("height","50")
 .attr("width",function(d){return d;})
-.attr("x","0")
+.attr("x",function(d,i){return (i+1)*50)
 .attr("y","0")
 //.attr("fill","blue")
   
