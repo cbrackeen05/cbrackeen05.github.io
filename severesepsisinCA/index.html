@@ -48,8 +48,8 @@ d3.select('svg')
 .attr("stroke","black")
 .attr("stroke-width", 1.5)
 .attr("d", "d3.line()
-  .x(d => x_year(d.Year))
-  .y(d => y_cases(d.SS_Cases))"
+   .x(function(d) {return x_year(d.Year);})
+   .y(function(d) {return y_cases(d.SS_Cases);})"
   )
   
 }
