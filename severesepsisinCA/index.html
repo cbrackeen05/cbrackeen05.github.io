@@ -23,12 +23,14 @@
 async function init() {
 var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen05.github.io/main/severesepsisinCA/ca_severesep.csv");
 
+var x_cases = d3.scaleBand().domain([100000,300000]).range([0,300])
+  
 d3.select('svg')
 .append('g').attr('transform','translate(50,50)')
 .selectAll('circle').data(data).enter().append('circle')
-.attr("cx",10)
+.attr("cx",function(d,i){return x(d.SS_cases);})
 .attr("cy",10)
-.attr("r",30)
+.attr("r",5)
   
 }
 </script>
