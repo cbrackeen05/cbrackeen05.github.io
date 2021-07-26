@@ -29,7 +29,7 @@ d3.select('svg')
 .attr('x',function(d,i){return x(i);})
 .attr('y',function(d){return y(d);})
 .attr('width',x.bandwidth())
-.attr('height',function(d){return 400-y(d);})
+.attr('height',function(d){return 500-y(d);})
 
 d3.select('svg')
 .append('g').attr('transform','translate(250,250)')
