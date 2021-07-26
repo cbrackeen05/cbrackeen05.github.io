@@ -16,19 +16,19 @@ var x = d3.scaleBand().domain([0,1,2,3,4,5]).range([0,400])
 var y = d3.scaleLinear().domain([0,42]).range([400,0])
 
 d3.select('svg')
-.append('g').attr('transform','translate(250,250)')
+.append('g').attr('transform','translate(50,50)')
 .selectAll('rect').data(data).enter().append('rect')
 .attr('x',function(d,i){return x(i);})
 .attr('y',function(d){return y(d);})
 .attr('width',x.bandwidth())
-.attr('height',function(d){return 200-y(d);})
+.attr('height',function(d){return 400-y(d);})
 
 d3.select('svg')
-.append('g').attr('transform','translate(250,250)')
+.append('g').attr('transform','translate(50,50)')
 .call(d3.axisLeft(y))
 
 d3.select('svg')
-.append('g').attr('transform','translate(250,400)')
+.append('g').attr('transform','translate(50,450)')
 .call(d3.axisBottom(x))
 
   
