@@ -24,7 +24,7 @@ async function init() {
 var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen05.github.io/main/severesepsisinCA/ca_severesep.csv");
 
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([300,0])
-var x_year = d3.scaleBand().domain([2010,2019]).range([0,300])
+var x_year = d3.scaleLinear().domain([2010,2019]).range([0,300])
   
 d3.select('svg')
 .append('g').attr('transform','translate(50,50)')
