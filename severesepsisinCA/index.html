@@ -14,24 +14,23 @@
 </div>
 
  
-<body>
-<svg width=1000 height=1000>
+<body onload='init()'>
+<svg width=300 height=300>
 </svg>
-</body>
+
   
 <script>
-var data = d3.csv("https://flunky.github.io/cars2017.csv");
+async function init() {
+var data = await d3.csv("https://flunky.github.io/cars2017.csv");
 
 d3.select('svg')
-.append('g')
-.attr('transform','translate(400,150)')
-.selectAll('circle')
-.data(data)
-.enter()
-.append('circle')
-.attr('cx',400)
-.attr('cy',150)
-.attr('r',30)
- 
+.append('g').attr('transform','translate(50,50)')
+.selectAll('circle').data(data).enter().append('circle')
+.attr("cx",10)
+.attr("cy",10)
+.attr("r",30)
+  
+}
 </script>
+</body>
 </html>
