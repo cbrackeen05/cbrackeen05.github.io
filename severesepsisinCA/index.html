@@ -47,9 +47,9 @@ d3.select('svg')
 .attr("fill","none")
 .attr("stroke","black")
 .attr("stroke-width", 1.5)
-.attr("d", "d3.line()
-   .x(function(d) {return x_year(d.Year);})
-   .y(function(d) {return y_cases(d.SS_Cases);})"
+.attr("d", d3.line()
+   .x(function(d){return x_year(d.Year);})
+   .y(function(d){return y_cases(d.SS_Cases);})
   )
   
 }
