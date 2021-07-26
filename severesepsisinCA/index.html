@@ -15,7 +15,7 @@
 
  
 <body onload='init()'>
-<svg width=300 height=300>
+<svg width=400 height=400>
 </svg>
 
   
@@ -28,7 +28,7 @@ var x_cases = d3.scaleBand().domain([100000,300000]).range([0,300])
 d3.select('svg')
 .append('g').attr('transform','translate(50,50)')
 .selectAll('circle').data(data).enter().append('circle')
-.attr("cx",function(d,i){return x(d.SS_cases);})
+.attr("cx",function(d,i){return x_cases(d.SS_cases);})
 .attr("cy",10)
 .attr("r",5)
   
