@@ -63,6 +63,18 @@ d3.select('svg')
    .y(function(d){return y_mort(d.SS_Mortality);})
   )
   
+d3.select('svg')
+.append('g').attr('transform','translate(50,50)')
+.call(d3.axisLeft(y_cases))
+  
+d3.select('svg')
+.append('g').attr('transform','translate(350,50)')
+.call(d3.axisRight(y_mort))
+  
+d3.select('svg')
+.append('g').attr('transform','translate(50,350)')
+.call(d3.axisBottom(x_year))
+  
 }
 </script>
 </body>
