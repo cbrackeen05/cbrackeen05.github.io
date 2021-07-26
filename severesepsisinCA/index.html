@@ -18,15 +18,26 @@
 </body>
   
 <script>
-var data = [8,15,40,50,80];
-d3.select("svg").selectAll("rect").data(data).enter().append("rect")
-.attr("x",0)
-.attr("y",0)
-.attr("height",50)
-.attr("width",50)
-//.attr("width",function(d){return d;})
-//.attr("x",function(d,i){return (i+1)*50;})
-//.attr("fill","blue")
+var data = [4,8,15,16,24,42];
+var x = d3.scaleBand().domain([0,1,2,3,4,5]).range([0,200])
+var y = d3.scaleLinear().domain([0,42]).range([200,0])
+
+d3.select('svg')
+.append('g').attr('transform','translate(50,50)')
+.selectAll('rect').data(data).enter().append('rect')
+.attr('x',function(d,i){return x(i);})
+.attr('y',function(d){return y(d);})
+.attr('width',x.bandwidth())
+.attr('height',function(d){return 200-y(d);})
+
+d3.select('svg')
+.append('g').attr('transform','translate(50,50)')
+.call(d3.axisLeft(y))
+
+d3.select('svg')
+.append('g').attr('transform','translate(50,250)')
+.call(d3.axisBottom(x))
+
   
 </script>
 </html>
