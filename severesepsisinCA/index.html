@@ -19,26 +19,38 @@
 </body>
   
 <script>
-var data = [4,8,15,16,24,42];
-var x = d3.scaleBand().domain([0,1,2,3,4,5]).range([0,500])
-var y = d3.scaleLinear().domain([0,42]).range([500,0])
+//var data = [4,8,15,16,24,42];
+d3.csv(
+    "https://raw.githubusercontent.com/cbrackeen05/cbrackeen05.github.io/main/severesepsisinCA/ca_severesep.csv"),
+    function(dataset){
+  dataset.forEach(function(d){
+    d.Year = +d.Year;
+    d.SS_Cases = +d.SS_Cases;
+    d.SS_Mortality = +d.SS_Mortality;
+  });
+//var x = d3.scaleBand().domain([0,1,2,3,4,5]).range([0,500])
+//var y = d3.scaleLinear().domain([0,42]).range([500,0])
 
 d3.select('svg')
-.append('g').attr('transform','translate(400,150)')
-.selectAll('rect').data(data).enter().append('rect')
-.attr('x',function(d,i){return x(i);})
-.attr('y',function(d){return y(d);})
-.attr('width',x.bandwidth())
-.attr('height',function(d){return 500-y(d);})
+.append('g')
+.attr('transform','translate(400,150)')
+.selectAll('circle')
+.data(dataset)
+.enter()
+.append('circle')
+.attr('cx',0)
+.attr('cy',0)
+.attr('r',10)
+//.attr('height',function(d){return 500-y(d);})
 
-d3.select('svg')
-.append('g').attr('transform','translate(400,150)')
-.call(d3.axisLeft(y))
+//d3.select('svg')
+//.append('g').attr('transform','translate(400,150)')
+//.call(d3.axisLeft(y))
 
-d3.select('svg')
-.append('g').attr('transform','translate(400,650)')
-.call(d3.axisBottom(x))
+//d3.select('svg')
+//.append('g').attr('transform','translate(400,650)')
+//.call(d3.axisBottom(x))
 
-  
+ });
 </script>
 </html>
