@@ -19,8 +19,8 @@
 </body>
   
 <script>
-var data = [40,40];
-d3.select('svg').selectAll('rect').data(data)//.append('rect')
+var data = [8,15,40,50,80];
+d3.select('svg').selectAll('rect').data(data).enter().append('rect')
 .attr("height","50")
 .attr("width",function(d){return d;})
 .attr("x",function(d,i){return (i+1)*50)
