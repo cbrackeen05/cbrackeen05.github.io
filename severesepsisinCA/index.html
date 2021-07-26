@@ -20,11 +20,8 @@
 </body>
   
 <script>
-//var data = [4,8,15,16,24,42];
 async function init() {
 var data = await d3.csv("https://flunky.github.io/cars2017.csv");
-//var x = d3.scaleBand().domain([0,1,2,3,4,5]).range([0,500])
-//var y = d3.scaleLinear().domain([0,42]).range([500,0])
 
 d3.select('svg')
 .append('g')
@@ -36,16 +33,6 @@ d3.select('svg')
 .attr('cx',400)
 .attr('cy',150)
 .attr('r',30)
-//.attr('height',function(d){return 500-y(d);})
-
-//d3.select('svg')
-//.append('g').attr('transform','translate(400,150)')
-//.call(d3.axisLeft(y))
-
-//d3.select('svg')
-//.append('g').attr('transform','translate(400,650)')
-//.call(d3.axisBottom(x))
-
  }
 </script>
 </html>
