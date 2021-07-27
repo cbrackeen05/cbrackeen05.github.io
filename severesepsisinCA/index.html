@@ -53,7 +53,8 @@ d3.select('svg')
 .attr("cy",function(d){return y_mort(d.SS_Mortality);})
 .attr("r",2)
   
-d3.select('svg')
+const mort_path = d3
+.select('svg')
 .append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
 .attr("fill","none")
