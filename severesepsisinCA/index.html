@@ -154,6 +154,7 @@ _removeCases()
 _removeMort()
   
 caseDots
+.transition()
 .attr("fill","lightblue")
 .attr("stroke","black");
   
@@ -174,6 +175,22 @@ mortLine
 function pageOne(){
 _removeCases()
 _removeMort()
+  
+mortDots
+.transition()
+.attr("fill","lightblue")
+.attr("stroke","black");
+
+_drawMortLine()
+}
+  
+function pageTwo(){
+caseDots
+.transition()
+.attr("fill","lightblue")
+.attr("stroke","black");
+  
+_drawCaseLine();
   
 mortDots
 .transition()
