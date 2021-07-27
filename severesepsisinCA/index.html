@@ -85,7 +85,9 @@ var mortDots = d3
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_mort(d.SS_Mortality);})
-.attr("r",2);
+.attr("r",2)
+.attr("fill","none")
+.attr("stroke","none);
   
 var caseDots = d3
 .select('svg')
@@ -93,14 +95,16 @@ var caseDots = d3
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_cases(d.SS_Cases);})
-.attr("r",2);
+.attr("r",2)
+.attr("fill","none")
+.attr("stroke","none);
   
 var mortLine = d3
 .select('svg')
 .append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
 .attr("fill","none")
-.attr("stroke","black")
+.attr("stroke","none")
 .attr("stroke-width", 1.5)
 .attr("d", d3.line()
    .x(function(d){return x_year(d.Year);})
