@@ -148,6 +148,9 @@ caseLine
 }
 
 function startSlide(){
+_removeCases()
+_removeMort()
+  
 caseDots
 .attr("fill","lightblue")
 .attr("stroke","black");
@@ -168,6 +171,7 @@ mortLine
 
 function pageOne(){
 _removeCases()
+_removeMort()
   
 mortDots
 .transition()
