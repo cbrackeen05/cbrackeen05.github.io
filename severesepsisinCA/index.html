@@ -25,13 +25,26 @@ var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([500,0])
 var x_year = d3.scaleLinear().domain([2010,2019]).range([0,600])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
-  
+
+const transitionPath = d3.transition().duration(2500)
+
 d3.select('svg')
 .append('g').attr('transform','translate(400,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_cases(d.SS_Cases);})
 .attr("r",2)
+  
+d3.select('svg')
+.append('g').attr('transform','translate(400,10)')
+.append('path').datum(data)
+.attr("fill","none")
+.attr("stroke","black")
+.attr("stroke-width", 1.5)
+.attr("d", d3.line()
+   .x(function(d){return x_year(d.Year);})
+   .y(function(d){return y_cases(d.SS_Cases);})
+  )
   
 d3.select('svg')
 .append('g').attr('transform','translate(400,10)')
@@ -48,31 +61,11 @@ d3.select('svg')
 .attr("stroke-width", 1.5)
 .attr("d", d3.line()
    .x(function(d){return x_year(d.Year);})
-   .y(function(d){return y_cases(d.SS_Cases);})
-  )
-  
-var path_mort = d3.select('svg')
-.append('g').attr('transform','translate(400,10)')
-.append('path').datum(data)
-.attr("fill","none")
-.attr("stroke","black")
-.attr("stroke-width", 1.5)
-.attr("d", d3.line()
-   .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_mort(d.SS_Mortality);})
   );
+.transition(transitionPath)
+.attr(“stroke-dashoffset”, 0)
 
-const path_mort_Length = path_mort.node().getTotalLength();
-const transitionPath = d3
-.transition()
-.duration(2500);
-  
-path_mort
-    .attr(“stroke-dashoffset”, path_mort_Length)
-    .attr(“stroke-dasharray”, path_mort_Length)
-    .transition(transitionPath)
-    .attr(“stroke-dashoffset”, 0);
-  
 d3.select('svg')
 .append('g').attr('transform','translate(400,10)')
 .call(d3.axisLeft(y_cases))
