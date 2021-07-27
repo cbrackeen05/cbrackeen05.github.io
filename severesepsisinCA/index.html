@@ -113,6 +113,28 @@ var mortLine = d3
    .y(function(d){return y_mort(d.SS_Mortality);})
   );
 
+function _removeCases(){
+caseDots
+.transition().duration(1000)
+.attr("fill","none")
+.attr("stroke","none")
+      
+caseLine
+.transition().duration(1000)
+.attr("stroke","none")
+}
+ 
+function _removeMort(){
+mortDots
+.transition().duration(1000)
+.attr("fill","none")
+.attr("stroke","none")
+      
+mortLine
+.transition().duration(1000)
+.attr("stroke","none")
+}
+  
 function _drawCaseLine() {
 var casePathLength = caseLine.node().getTotalLength()
   
@@ -144,6 +166,8 @@ mortLine
 }
 
 function pageOne(){
+_removeCases()
+  
 mortDots
 .transition()
 .attr("fill","lightblue")
