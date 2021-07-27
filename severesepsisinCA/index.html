@@ -83,13 +83,14 @@ var caseLine = d3
    .y(function(d){return y_cases(d.SS_Cases);})
   )
 
-const casePathLength = caseLine.node().getTotalLength()
+//const casePathLength = caseLine.node().getTotalLength()
   
-caseLine
-  .attr("stroke-dashoffset", casePathLength)
-  .attr("stroke-dasharray", casePathLength)
-  .transition(transitionPath)
-  .attr("stroke-dashoffset", 0)}
+//caseLine
+//  .attr("stroke-dashoffset", casePathLength)
+//  .attr("stroke-dasharray", casePathLength)
+//  .transition(transitionPath)
+//  .attr("stroke-dashoffset", 0)
+}
 
 function startSlide(){
 var caseDots = d3
