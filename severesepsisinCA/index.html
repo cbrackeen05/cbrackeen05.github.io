@@ -134,8 +134,8 @@ function _drawMortLine() {
 var mortPathLength = mortLine.node().getTotalLength();
   
 mortLine
-.attr("stroke-dashoffset", casePathLength)
-.attr("stroke-dasharray", casePathLength)
+.attr("stroke-dashoffset", mortPathLength)
+.attr("stroke-dasharray", mortPathLength)
 .transition().duration(1500)
 .attr("stroke","black")
 .attr("stroke-dashoffset", 0)
