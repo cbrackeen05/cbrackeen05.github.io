@@ -80,7 +80,7 @@ var caseLine = d3
 .attr("d", d3.line()
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_cases(d.SS_Cases);})
-  )}
+  )
 
 function _drawCaseLine() {
 var casePathLength = caseLine.node().getTotalLength()
