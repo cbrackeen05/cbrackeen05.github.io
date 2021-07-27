@@ -70,26 +70,28 @@ var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
 const transitionPath = d3.transition().duration(2500)
 const transitionDots = d3.transition().duration(4000)
 
-function _drawCaseLine() {
 var caseLine = d3
 .select('svg')
 .append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
 .attr("fill","none")
-.attr("stroke","black")
+.attr("stroke","none")
 .attr("stroke-width", 1.5)
 .attr("d", d3.line()
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_cases(d.SS_Cases);})
-  )
+  )}
 
-//const casePathLength = caseLine.node().getTotalLength()
-  
-//caseLine
-//  .attr("stroke-dashoffset", casePathLength)
-//  .attr("stroke-dasharray", casePathLength)
-//  .transition(transitionPath)
-//  .attr("stroke-dashoffset", 0)
+function _drawCaseLine() {
+var casePathLength = caseLine.node().getTotalLength()
+
+caseLine = caseLine.attr("stroke","black")
+
+caseLine
+  .attr("stroke-dashoffset", casePathLength)
+  .attr("stroke-dasharray", casePathLength)
+  .transition(transitionPath)
+  .attr("stroke-dashoffset", 0)
 }
 
 function startSlide(){
