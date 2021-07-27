@@ -84,7 +84,7 @@ caseDots
 //.style("stroke","none")
 //.transition(transitionDots)
 .attr("fill","lightblue")
-.attr("stroke","black");}
+.attr("stroke","black");
 
 
 var caseLine = d3
@@ -97,7 +97,7 @@ var caseLine = d3
 .attr("d", d3.line()
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_cases(d.SS_Cases);})
-  )
+  );
 
 const casePathLength = caseLine.node().getTotalLength();
   
@@ -105,7 +105,7 @@ caseLine
   .attr("stroke-dashoffset", casePathLength)
   .attr("stroke-dasharray", casePathLength)
   .transition(transitionPath)
-  .attr("stroke-dashoffset", 0);
+  .attr("stroke-dashoffset", 0);}
   
 function pageOne(){
 var mortDots = d3
@@ -114,14 +114,14 @@ var mortDots = d3
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_mort(d.SS_Mortality);})
-.attr("r",2)
+.attr("r",2);
 
 mortDots
 //.style("fill","none")
 //.style("stroke","none")
 //.transition(transitionDots)
 .attr("fill","lightblue")
-.attr("stroke","black")
+.attr("stroke","black");
   
 var mortLine = d3
 .select('svg')
