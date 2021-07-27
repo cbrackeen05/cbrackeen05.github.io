@@ -64,6 +64,9 @@ const mort_path = d3
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_mort(d.SS_Mortality);})
   );
+
+const mortPathLength = mort_path.node().getTotalLength();
+  
 //.transition(transitionPath)
 //.attr(“stroke-dashoffset”, 0)
 
