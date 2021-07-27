@@ -28,14 +28,16 @@ var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
 
 const transitionPath = d3.transition().duration(2500)
 
-d3.select('svg')
+const caseDots = d3
+.select('svg')
 .append('g').attr('transform','translate(400,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_cases(d.SS_Cases);})
 .attr("r",2)
   
-d3.select('svg')
+const caseLine = d3
+.select('svg')
 .append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
 .attr("fill","none")
@@ -46,14 +48,15 @@ d3.select('svg')
    .y(function(d){return y_cases(d.SS_Cases);})
   )
   
-d3.select('svg')
+const mortDots = d3
+.select('svg')
 .append('g').attr('transform','translate(400,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_mort(d.SS_Mortality);})
 .attr("r",2)
   
-const mort_path = d3
+const mortLine = d3
 .select('svg')
 .append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
@@ -65,9 +68,9 @@ const mort_path = d3
    .y(function(d){return y_mort(d.SS_Mortality);})
   );
 
-const mortPathLength = mort_path.node().getTotalLength();
+const mortPathLength = mortLine.node().getTotalLength();
 
-mort_path
+mortLine
   .attr("stroke-dashoffset", mortPathLength)
   .attr("stroke-dasharray", mortPathLength)
   .transition(transitionPath)
