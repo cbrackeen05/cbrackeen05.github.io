@@ -7,16 +7,14 @@
   
 <div style="position:relative; left:80px; top:2px;">
 <h1>Severe Sepsis Cases in California</h1>
-</div>
-<div style="position:relative; left:20px; top:80px;">
-<p> Severe sepsis is a constant threat in hospitals as<br>
+  <h2> Severe sepsis is a constant threat in hospitals as
   it is has the number one cost of hospitalization in<br>
-  the United States an on average 30% of patients <br>
-  diagnosed with the disease do not survive. </p>
+  the United States an on average 30% of patients 
+  diagnosed with the disease do not survive. </p></h2>
 </div>
  
 <body onload='init()'>
-<svg width=1000 height=1000>
+<svg width=1100 height=1000>
 </svg>
 
   
@@ -25,25 +23,25 @@ async function init() {
 var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen05.github.io/main/severesepsisinCA/ca_severesep.csv");
 
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([500,0])
-var x_year = d3.scaleLinear().domain([2010,2019]).range([0,500])
+var x_year = d3.scaleLinear().domain([2010,2019]).range([0,600])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
   
 d3.select('svg')
-.append('g').attr('transform','translate(400,0)')
+.append('g').attr('transform','translate(400,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_cases(d.SS_Cases);})
 .attr("r",2)
   
 d3.select('svg')
-.append('g').attr('transform','translate(400,0)')
+.append('g').attr('transform','translate(400,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_mort(d.SS_Mortality);})
 .attr("r",2)
   
 d3.select('svg')
-.append('g').attr('transform','translate(400,0)')
+.append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
 .attr("fill","none")
 .attr("stroke","black")
@@ -54,7 +52,7 @@ d3.select('svg')
   )
   
 d3.select('svg')
-.append('g').attr('transform','translate(400,0)')
+.append('g').attr('transform','translate(400,10)')
 .append('path').datum(data)
 .attr("fill","none")
 .attr("stroke","black")
@@ -65,15 +63,15 @@ d3.select('svg')
   )
   
 d3.select('svg')
-.append('g').attr('transform','translate(400,0)')
+.append('g').attr('transform','translate(400,10)')
 .call(d3.axisLeft(y_cases))
   
 d3.select('svg')
-.append('g').attr('transform','translate(900,0)')
+.append('g').attr('transform','translate(1000,10)')
 .call(d3.axisRight(y_mort))
   
 d3.select('svg')
-.append('g').attr('transform','translate(400,500)')
+.append('g').attr('transform','translate(400,510)')
 .call(d3.axisBottom(x_year))
   
 }
