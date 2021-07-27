@@ -83,9 +83,14 @@ var caseLine = d3
   )
 
 function _drawCaseLine() {
+var casePathLength = caseLine.node().getTotalLength()
+  
 caseLine
-  .transition().duration(1500)
-  .attr("stroke","black")
+.attr("stroke-dashoffset", casePathLength)
+.attr("stroke-dasharray", casePathLength)
+.transition().duration(1500)
+.attr("stroke","black")
+.attr("stroke-dashoffset", 0)
 }
 
 function startSlide(){
