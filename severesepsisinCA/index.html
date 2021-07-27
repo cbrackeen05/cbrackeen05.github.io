@@ -74,7 +74,7 @@ var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
 
 var caseLine = d3
 .select('svg')
-.append('g').attr('transform','translate(100,10)')
+.append('g').attr('transform','translate(200,10)')
 .append('path').datum(data)
 .attr("fill","none")
 .attr("stroke","none")
@@ -86,7 +86,7 @@ var caseLine = d3
 
 var mortDots = d3
 .select('svg')
-.append('g').attr('transform','translate(100,10)')
+.append('g').attr('transform','translate(200,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_mort(d.SS_Mortality);})
@@ -96,7 +96,7 @@ var mortDots = d3
   
 var caseDots = d3
 .select('svg')
-.append('g').attr('transform','translate(100,10)')
+.append('g').attr('transform','translate(200,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
 .attr("cy",function(d){return y_cases(d.SS_Cases);})
@@ -106,7 +106,7 @@ var caseDots = d3
   
 var mortLine = d3
 .select('svg')
-.append('g').attr('transform','translate(100,10)')
+.append('g').attr('transform','translate(200,10)')
 .append('path').datum(data)
 .attr("fill","none")
 .attr("stroke","none")
@@ -201,15 +201,15 @@ _drawMortLine()
 }
 
 d3.select('svg')
-.append('g').attr('transform','translate(100,10)')
+.append('g').attr('transform','translate(200,10)')
 .call(d3.axisLeft(y_cases))
   
 d3.select('svg')
-.append('g').attr('transform','translate(700,10)')
+.append('g').attr('transform','translate(800,10)')
 .call(d3.axisRight(y_mort))
   
 d3.select('svg')
-.append('g').attr('transform','translate(100,510)')
+.append('g').attr('transform','translate(200,510)')
 .call(d3.axisBottom(x_year))
   
 d3.select("#startButton").on("click",startSlide)  
