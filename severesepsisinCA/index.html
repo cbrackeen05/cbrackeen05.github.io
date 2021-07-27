@@ -63,8 +63,8 @@ d3.select('svg')
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_mort(d.SS_Mortality);})
   );
-.transition(transitionPath)
-.attr(“stroke-dashoffset”, 0)
+//.transition(transitionPath)
+//.attr(“stroke-dashoffset”, 0)
 
 d3.select('svg')
 .append('g').attr('transform','translate(400,10)')
