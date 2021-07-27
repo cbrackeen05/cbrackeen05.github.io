@@ -1,6 +1,6 @@
 <html>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<style> circle {fill: lightblue; stroke: black;} </style>
+
 <head>
 <title>Severe Sepsis in California</title>
 </head>
@@ -37,11 +37,11 @@ const caseDots = d3
 .attr("r",2)
 
 caseDots
-.style("fill","none")
-.style("stroke","none")
-.transition(transitionPath)
-.style("fill","lightblue")
-.style("stroke","black")
+//.style("fill","none")
+//.style("stroke","none")
+//.transition(transitionPath)
+.attr("fill","lightblue")
+.attr("stroke","black")
   
 const caseLine = d3
 .select('svg')
