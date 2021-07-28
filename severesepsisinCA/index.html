@@ -77,7 +77,7 @@ var x_year = d3.scaleLinear().domain([2010,2019]).range([0,700])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
 
 var caseLine = d3
-.select('svg')
+.select('#mainbody')
 .append('g').attr('transform','translate(200,10)')
 .append('path').datum(data)
 .attr("fill","none")
@@ -89,7 +89,7 @@ var caseLine = d3
   );
   
 var mortLine = d3
-.select('svg')
+.select('#mainbody')
 .append('g').attr('transform','translate(200,10)')
 .append('path').datum(data)
 .attr("fill","none")
@@ -101,7 +101,7 @@ var mortLine = d3
   );
   
 var mortDots = d3
-.select('svg')
+.select('#mainbody')
 .append('g').attr('transform','translate(200,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
@@ -111,7 +111,7 @@ var mortDots = d3
 .attr("stroke","none");
   
 var caseDots = d3
-.select('svg')
+.select('#mainbody')
 .append('g').attr('transform','translate(200,10)')
 .selectAll('circle').data(data).enter().append('circle')
 .attr("cx",function(d){return x_year(d.Year);})
@@ -123,13 +123,13 @@ var caseDots = d3
 
   
 var yAxisCases = d3
-.select('svg')
+.select('#mainbody')
 .append('g').attr('transform','translate(200,10)')
 .call(d3.axisLeft(y_cases))
 .attr("font-size",12)
   
 var yAxisMort = d3
-.select('svg')
+.select('#mainbody')
 .append('g').attr('transform','translate(900,10)')
 .call(d3.axisRight(y_mort))
 .attr("font-size",12)
@@ -197,9 +197,6 @@ d3.select("#infoPara")
 }
   
 function _writeBothPara(){
-d3.select("#infoPara")
-.text('')
-  
 d3.select("#infoPara")
 .append("tspan")
   .attr("y",0)
@@ -282,7 +279,7 @@ _writeBothPara()
 
 
   
-d3.select('svg')
+d3.select('#mainbody')
 .append('g').attr('transform','translate(200,510)')
 .call(d3.axisBottom(x_year))
   
