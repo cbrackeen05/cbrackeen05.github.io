@@ -199,13 +199,15 @@ d3.select("#infoPara")
 function _writeBothPara(){
 d3.select("#infoPara")
 .text('')
+  
+d3.select("#infoPara")
 .append("tspan")
-  .attr("dy", "0em")
+  .attr("dy", "0")
   .text("Hover over the data points on the graph")
  
 d3.select("#infoPara")
 .append("tspan")
-  .attr("dy", "1em")
+  .attr("dy", "10")
   .text("to learn more about sepsis over the years.")
 }
   
