@@ -133,6 +133,7 @@ function _removeCaseAxis(){
  .transition()
  .attr("opacity",0)
 }
+_removeCaseAxis()
 
 function _removeCases(){
 caseDots
@@ -143,6 +144,8 @@ caseDots
 caseLine
 .transition().duration(1000)
 .attr("stroke","none")
+  
+_removeCaseAxis()
 }
  
 function _removeMort(){
