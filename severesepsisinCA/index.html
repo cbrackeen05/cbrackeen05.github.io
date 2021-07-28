@@ -149,15 +149,15 @@ var yAxisMort = d3
 function _addToolTips(){
 caseDots
   .on("mouseover", function(event,d) {
-       div.transition()
+       tooltip.transition()
          .duration(200)
          .style("opacity", .9);
-       div.html("Case Tooltip")
+       tooltip.html("Case Tooltip")
          .style("left", (event.pageX) + "px")
          .style("top", (event.pageY - 28) + "px");
        })
    .on("mouseout", function(d) {
-       div.transition()
+       tooltip.transition()
          .duration(500)
          .style("opacity", 0);
        });
