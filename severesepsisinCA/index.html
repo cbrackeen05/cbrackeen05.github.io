@@ -128,6 +128,12 @@ var yAxisMort = d3
 .append('g').attr('transform','translate(900,10)')
 .call(d3.axisRight(y_mort))
 
+function _removeCaseAxis(){
+ yAxisCases.selectAll('g')
+ .transition()
+ .attr("opacity",0)
+}
+
 function _removeCases(){
 caseDots
 .transition().duration(1000)
