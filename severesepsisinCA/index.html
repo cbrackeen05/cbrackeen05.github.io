@@ -146,6 +146,23 @@ var yAxisMort = d3
 .call(d3.axisRight(y_mort))
 .attr("font-size",12)
 
+function _addToolTips(){
+caseDots
+  .on("mouseover", function(event,d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div.html("Case Tooltip")
+         .style("left", (event.pageX) + "px")
+         .style("top", (event.pageY - 28) + "px");
+       })
+   .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+}
+
 
 function _removeCaseAxis(){
  yAxisCases.selectAll('g')
@@ -249,7 +266,7 @@ d3.select("#infoPara")
 .append('text')
 .append("tspan")
 .attr('id','bothPara2')
-  .attr("y", 34)
+  .attr("y", 36)
   .text("to learn more about sepsis over the years.")
 }
   
@@ -317,7 +334,8 @@ mortDots
 .attr("stroke","black");
 
 _drawMortLine();
-_writeBothPara()
+_writeBothPara();
+_addToolTips();
 }
 
 
