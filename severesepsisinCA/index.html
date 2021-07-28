@@ -133,7 +133,26 @@ function _removeCaseAxis(){
  .transition()
  .attr("opacity",0)
 }
+
+function _removeMortAxis(){
+ yAxisMort.selectAll('g')
+ .transition()
+ .attr("opacity",0)
+}
 _removeCaseAxis()
+_removeMortAxis()
+  
+function _addCaseAxis(){
+ yAxisCases.selectAll('g')
+ .transition()
+ .attr("opacity",1)
+}
+  
+function _addMortAxis(){
+ yAxisMort.selectAll('g')
+ .transition()
+ .attr("opacity",1)
+}
 
 function _removeCases(){
 caseDots
@@ -157,6 +176,8 @@ mortDots
 mortLine
 .transition().duration(1000)
 .attr("stroke","none")
+  
+_removeMortAxis()
 }
 
 function _writeCasePara(){
@@ -165,6 +186,7 @@ d3.select("#infoPara")
 }
   
 function _drawCaseLine() {
+_addCaseAxis()
 var casePathLength = caseLine.node().getTotalLength()
   
 caseLine
@@ -189,6 +211,7 @@ _writeCasePara();
 }
 
 function _drawMortLine() {
+_addMortAxis
 var mortPathLength = mortLine.node().getTotalLength();
   
 mortLine
