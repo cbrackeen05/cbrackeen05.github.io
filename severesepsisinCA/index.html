@@ -87,7 +87,19 @@ var caseLine = d3
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_cases(d.SS_Cases);})
   );
-
+  
+var mortLine = d3
+.select('svg')
+.append('g').attr('transform','translate(200,10)')
+.append('path').datum(data)
+.attr("fill","none")
+.attr("stroke","none")
+.attr("stroke-width", 1.5)
+.attr("d", d3.line()
+   .x(function(d){return x_year(d.Year);})
+   .y(function(d){return y_mort(d.SS_Mortality);})
+  );
+  
 var mortDots = d3
 .select('svg')
 .append('g').attr('transform','translate(200,10)')
@@ -108,17 +120,7 @@ var caseDots = d3
 .attr("fill","none")
 .attr("stroke","none");
   
-var mortLine = d3
-.select('svg')
-.append('g').attr('transform','translate(200,10)')
-.append('path').datum(data)
-.attr("fill","none")
-.attr("stroke","none")
-.attr("stroke-width", 1.5)
-.attr("d", d3.line()
-   .x(function(d){return x_year(d.Year);})
-   .y(function(d){return y_mort(d.SS_Mortality);})
-  );
+
   
 var yAxisCases = d3
 .select('svg')
