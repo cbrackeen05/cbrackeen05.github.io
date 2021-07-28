@@ -414,6 +414,17 @@ mortDots
        });
 }
 
+function _removeToolTips(){
+mortDots
+.transition()
+.on("mouseover","none")
+.on("mouseout","none")
+  
+caseDots
+.transition()
+.on("mouseover","none")
+.on("mouseout","none")
+}
 
 function _removeCaseAxis(){
  yAxisCases.selectAll('g')
@@ -536,6 +547,7 @@ caseLine
 function startSlide(){
 _removeCases()
 _removeMort()
+_removeToolTips()
   
 caseDots
 .transition()
@@ -561,6 +573,7 @@ mortLine
 function pageOne(){
 _removeCases()
 _removeMort()
+_removeToolTips()
   
 mortDots
 .transition()
