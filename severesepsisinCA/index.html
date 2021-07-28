@@ -149,19 +149,25 @@ var yAxisMort = d3
 function _addToolTips(){
 caseDots
   .on("mouseover", function(event,d) {
+    if(d.Year<=2010){
        tooltip.transition()
          .duration(200)
          .style("opacity", .9);
-       if(d.Year=2010){
        tooltip.html("2010 Case Tooltip")
          .style("left", (event.pageX) + "px")
          .style("top", (event.pageY - 28) + "px");}
-      else if(d.Year=2011){
+      else if(d.Year<=2011){
+       tooltip.transition()
+         .duration(200)
+         .style("opacity", .9);
        tooltip.html("2011 Case Tooltip")
          .style("left", (event.pageX) + "px")
          .style("top", (event.pageY - 28) + "px");}
       else{
-      tooltip.html("Case Tooltip")
+       tooltip.transition()
+         .duration(200)
+         .style("opacity", .9);
+       tooltip.html("Case Tooltip")
          .style("left", (event.pageX) + "px")
          .style("top", (event.pageY - 28) + "px");}
        })
