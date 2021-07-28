@@ -71,7 +71,7 @@ async function init() {
 var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen05.github.io/main/severesepsisinCA/ca_severesep.csv");
 
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([500,0])
-var x_year = d3.scaleLinear().domain([2010,2019]).range([0,600])
+var x_year = d3.scaleLinear().domain([2010,2019]).range([0,700])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
 
 var caseLine = d3
@@ -125,7 +125,7 @@ var yAxisCases = d3
   
 var yAxisMort = d3
 .select('svg')
-.append('g').attr('transform','translate(800,10)')
+.append('g').attr('transform','translate(900,10)')
 .call(d3.axisRight(y_mort))
 
 function _removeCases(){
