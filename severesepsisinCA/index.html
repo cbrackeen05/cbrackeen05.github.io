@@ -150,7 +150,9 @@ function _addToolTips(){
 caseDots
   .on("mouseover", function(event,d) {
     if(d.Year<=2010){
-      caseDots.transition()
+        caseDots.selectAll('circle')
+        .filter(d.Year=2010)
+        .transition()
         .duration(200)
         .attr("r",10)
        tooltip.transition()
