@@ -150,7 +150,7 @@ function _addToolTips(){
 caseDots
   .on("mouseover", function(event,d) {
     if(d.Year<=2010){
-        caseDots.selectAll('circle')
+        caseDots
         .filter(function(d){return d.Year==2010;})
         .transition()
         .duration(200)
