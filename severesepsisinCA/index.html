@@ -152,9 +152,18 @@ caseDots
        tooltip.transition()
          .duration(200)
          .style("opacity", .9);
-       tooltip.html("Case Tooltip")
+       if{d.Year='2010' 
+       tooltip.html("2010 Case Tooltip")
          .style("left", (event.pageX) + "px")
-         .style("top", (event.pageY - 28) + "px");
+         .style("top", (event.pageY - 28) + "px");}
+      else if{d.Year='2011' 
+       tooltip.html("2011 Case Tooltip")
+         .style("left", (event.pageX) + "px")
+         .style("top", (event.pageY - 28) + "px");}
+      else{
+      tooltip.html("Case Tooltip")
+         .style("left", (event.pageX) + "px")
+         .style("top", (event.pageY - 28) + "px");}}
        })
    .on("mouseout", function(d) {
        tooltip.transition()
