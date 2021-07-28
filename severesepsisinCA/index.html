@@ -42,7 +42,18 @@
   color: white;
   border: 2px solid #008CBA;
 }
-
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
 </style>
 <div style="position:absolute; left:80px; top:2px;">
 <h1>Severe Sepsis Cases in California</h1>
@@ -75,9 +86,10 @@ var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([500,0])
 var x_year = d3.scaleLinear().domain([2010,2019]).range([0,700])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
-var tool_tip = d3.tip()
-d3.select('#mainbody').call(tool_tip);
-  
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
 var caseLine = d3
 .select('#mainbody')
 .append('g').attr('transform','translate(200,10)')
