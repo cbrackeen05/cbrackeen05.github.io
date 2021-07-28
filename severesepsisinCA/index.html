@@ -115,6 +115,16 @@ var mortLine = d3
    .x(function(d){return x_year(d.Year);})
    .y(function(d){return y_mort(d.SS_Mortality);})
   );
+  
+var yAxisCases = d3
+.select('svg')
+.append('g').attr('transform','translate(200,10)')
+.call(d3.axisLeft(y_cases))
+  
+var yAxisMort = d3
+.select('svg')
+.append('g').attr('transform','translate(800,10)')
+.call(d3.axisRight(y_mort))
 
 function _removeCases(){
 caseDots
@@ -200,13 +210,7 @@ mortDots
 _drawMortLine()
 }
 
-d3.select('svg')
-.append('g').attr('transform','translate(200,10)')
-.call(d3.axisLeft(y_cases))
-  
-d3.select('svg')
-.append('g').attr('transform','translate(800,10)')
-.call(d3.axisRight(y_mort))
+
   
 d3.select('svg')
 .append('g').attr('transform','translate(200,510)')
