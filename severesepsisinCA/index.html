@@ -198,11 +198,13 @@ d3.select("#infoPara")
   
 function _writeBothPara(){
 d3.select("#infoPara")
+.text('')
 .append("text")
   .attr("dy", "0em")
   .text("Hover over the data points on the graph")
  
 d3.select("#infoPara")
+.text('')
 .append("text")
   .attr("dy", "1em")
   .text("to learn more about sepsis over the years.")
