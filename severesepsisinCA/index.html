@@ -75,7 +75,7 @@ var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([500,0])
 var x_year = d3.scaleLinear().domain([2010,2019]).range([0,700])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
-//var tool_tip = d3.tip().attr("class", "d3-tip").offset([-8, 0]).html(function(d) { return "Tooltip text here "; });
+var tool_tip = d3.tip().attr("class", "d3-tip").offset([-8, 0]).html(function(d) { return "Tooltip text here "; });
   
 var caseLine = d3
 .select('#mainbody')
@@ -236,7 +236,7 @@ d3.select("#infoPara")
 .append('text')
 .append("tspan")
 .attr('id','bothPara2')
-  .attr("y", 30)
+  .attr("y", 34)
   .text("to learn more about sepsis over the years.")
 }
   
