@@ -185,25 +185,48 @@ mortLine
   
 _removeMortAxis()
 }
+  
+function _deleteCasePara(){
+d3.select('#casePara1').remove()
+}
+function _deleteMortPara(){
+d3.select('#mortPara1').remove()
+}
+function _deleteBothPara(){
+d3.select('#bothPara1').remove()
+d3.select('#bothPara2').remove()
+}
 
 function _writeCasePara(){
+_deleteBothPara()
+_deleteMortPara()
+  
 d3.select("#infoPara")
 .append('text')
 .append('tspan')
+.attr('id','casePara1')
 .text('This is information about Cases.')
 }
 
 function _writeMortPara(){
+_deleteCasePara()
+_deleteBothPara()
+  
 d3.select("#infoPara")
 .append('text')
 .append('tspan')
+.attr('id','mortPara1')
 .text('This is information about Mortality.')
 }
   
 function _writeBothPara(){
+_deleteCasePara()
+_deleteMortPara()
+
 d3.select("#infoPara")
 .append('text')
 .append("tspan")
+.attr('id','bothPara1')
   .attr("y",0)
   .attr("x",0)
   .text("Hover over the data points on the graph")
@@ -211,6 +234,7 @@ d3.select("#infoPara")
 d3.select("#infoPara")
 .append('text')
 .append("tspan")
+.attr('id','bothPara2')
   .attr("y", 10)
   .attr("x",0)
   .text("to learn more about sepsis over the years.")
