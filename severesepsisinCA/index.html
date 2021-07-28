@@ -188,22 +188,28 @@ _removeMortAxis()
 
 function _writeCasePara(){
 d3.select("#infoPara")
+.append('text')
+.append('tspan')
 .text('This is information about Cases.')
 }
 
 function _writeMortPara(){
 d3.select("#infoPara")
+.append('text')
+.append('tspan')
 .text('This is information about Mortality.')
 }
   
 function _writeBothPara(){
 d3.select("#infoPara")
+.append('text')
 .append("tspan")
   .attr("y",0)
   .attr("x",0)
   .text("Hover over the data points on the graph")
 
 d3.select("#infoPara")
+.append('text')
 .append("tspan")
   .attr("y", 10)
   .attr("x",0)
