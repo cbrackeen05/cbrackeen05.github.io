@@ -211,7 +211,7 @@ _writeCasePara();
 }
 
 function _drawMortLine() {
-_addMortAxis
+_addMortAxis();
 var mortPathLength = mortLine.node().getTotalLength();
   
 mortLine
@@ -235,9 +235,6 @@ _drawMortLine();
 }
   
 function pageTwo(){
-_addMortAxis();
-_drawCaseLine();
-
 caseDots
 .transition()
 .attr("fill","lightblue")
