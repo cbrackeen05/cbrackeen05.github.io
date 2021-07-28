@@ -56,7 +56,7 @@
 <button type="button" class="button button1">3</button>
 </div>
 <div style="position:absolute; left:80px; top:190px;">
-<p id="infoPara"></p></div>
+<p id="infoPara">Press the Start button to begin learning about sepsis in California. Use the numbered buttons to navigate through.</p></div>
 <div style="position:absolute; left:240px; top:140px;">
 <svg width=1100 height=1000>
 </svg>
@@ -231,10 +231,13 @@ mortDots
 .attr("fill","lightblue")
 .attr("stroke","black");
 
-_drawMortLine()
+_drawMortLine();
 }
   
 function pageTwo(){
+_addMortAxis();
+_drawCaseLine();
+
 caseDots
 .transition()
 .attr("fill","lightblue")
@@ -247,7 +250,7 @@ mortDots
 .attr("fill","lightblue")
 .attr("stroke","black");
 
-_drawMortLine()
+_drawMortLine();
 }
 
 
