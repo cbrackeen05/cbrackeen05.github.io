@@ -485,8 +485,14 @@ function _deleteBothPara(){
 d3.select('#bothPara1').remove()
 d3.select('#bothPara2').remove()
 }
+function _deleteStartPara(){
+d3.select('#startPara1').remove()
+d3.select('#startPara2').remove()
+d3.select('#startPara3').remove()
+}
 
 function _writeCasePara(){
+_deleteStartPara()
 _deleteBothPara()
 _deleteMortPara()
   
@@ -499,6 +505,7 @@ d3.select("#infoPara")
 }
 
 function _writeMortPara(){
+_deleteStartPara()
 _deleteCasePara()
 _deleteBothPara()
   
@@ -511,6 +518,7 @@ d3.select("#infoPara")
 }
   
 function _writeBothPara(){
+_deleteStartPara()
 _deleteCasePara()
 _deleteMortPara()
 
@@ -599,7 +607,30 @@ _writeBothPara();
 _addToolTips();
 }
 
+function addStartText(){
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','startPara1')
+  .attr("y",20)
+  .text("Press the start button to begin learning")
 
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','startPara2')
+  .attr("y", 36)
+  .text("about sepsis in California. Continue through")
+
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','startPara3')
+  .attr("y", 52)
+  .text("the numbered buttons to navigate the presentation.")
+}
+
+  
   
 d3.select('#mainbody')
 .append('g').attr('transform','translate(200,510)')
