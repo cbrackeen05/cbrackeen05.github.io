@@ -48,7 +48,7 @@ div.tooltip {
   width: 100px;
   height: 50px;
   padding: 2px;
-  font: 10px sans-serif;
+  font: 12px sans-serif;
   background: lightsteelblue;
   border: 0px;
   border-radius: 8px;
@@ -156,6 +156,8 @@ caseDots
         .duration(200)
         .attr("r",15)
        tooltip.transition()
+         .style("width",150)
+         .style("height",100)
          .duration(200)
          .style("opacity", .9);
        tooltip.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia is the 11th leading cause of mortality in the United States.")
