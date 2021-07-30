@@ -634,6 +634,17 @@ d3.select("#infoPara")
 .attr('id','startPara1')
   .attr("y",20)
   .text("Press the start button to begin learning")
+  
+function refSlide(){
+d3.select("#mainbody").selectAll("*").remove();
+  
+d3.select("#mainbody")
+.append('text')
+.append("tspan")
+.attr('id','startPara1')
+  .attr("y",20)
+  .text("1. Reference 1")
+}
 
 d3.select("#infoPara")
 .append('text')
