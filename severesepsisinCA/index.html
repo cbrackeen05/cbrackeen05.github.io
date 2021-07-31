@@ -464,6 +464,8 @@ function _removeCaseAxis(){
  yAxisCases.selectAll('g')
  .transition()
  .attr("opacity",0)
+  
+d3.select('#caseYAxis').remove()
 }
 
 function _removeMortAxis(){
@@ -478,6 +480,16 @@ function _addCaseAxis(){
  yAxisCases.selectAll('g')
  .transition()
  .attr("opacity",1)
+  
+d3.select('#mainbody')
+    .append('g')
+    .attr('id','caseYAxis')
+    .attr('transform', 'translate(130,260)')
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+    .append('tspan')
+    .text('Severe Sepsis Cases');
 }
   
 function _addMortAxis(){
@@ -716,13 +728,13 @@ d3.select("#refButton").on("click",refSlide)
   
 d3.select('#mainbody')
     .append('g')
-    .attr('id','yAxis')
-    .attr('transform', 'translate(130,260)')
+    .attr('id','mortYAxis')
+    .attr('transform', 'translate(730,260)')
     .append('text')
     .attr('text-anchor', 'middle')
-    .attr('transform', 'rotate(-90)')
+    .attr('transform', 'rotate(-270)')
     .append('tspan')
-    .text('Severe Sepsis Cases');
+    .text('Severe Sepsis Mortality');
 
 }
 </script>
