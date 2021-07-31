@@ -624,6 +624,8 @@ function startSlide(){
 _removeCases()
 _removeMort()
 _removeToolTips()
+d3.select('#mortYAxis')
+  .text('');
   
 caseDots
 .transition()
@@ -663,6 +665,8 @@ function pageOne(){
 _removeCases()
 _removeMort()
 _removeToolTips()
+d3.select('#caseYAxis')
+  .text('');
   
 mortDots
 .transition()
