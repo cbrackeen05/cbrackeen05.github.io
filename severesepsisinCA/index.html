@@ -96,6 +96,8 @@ var data = await d3.csv("https://raw.githubusercontent.com/cbrackeen05/cbrackeen
 var y_cases = d3.scaleLinear().domain([100000,300000]).range([500,0])
 var x_year = d3.scaleLinear().domain([2010,2019]).range([0,700])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
+var axisLabelX = -50;
+var axisLabelY = 500 / 2;
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
@@ -478,6 +480,15 @@ function _addCaseAxis(){
  yAxisCases.selectAll('g')
  .transition()
  .attr("opacity",1)
+  
+d3.select('#mainbody')
+    .append('g')
+    .attr('transform', 'translate('-50','250')')
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+    .text('Severe Sepsis Cases')
+    ;
 }
   
 function _addMortAxis(){
