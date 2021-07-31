@@ -463,6 +463,7 @@ caseDots
 function _removeCaseAxis(){
  yAxisCases.selectAll('g')
  .transition()
+ .duration(10)
  .attr("opacity",0)
   
 d3.select('#caseYAxis').remove()
@@ -471,6 +472,7 @@ d3.select('#caseYAxis').remove()
 function _removeMortAxis(){
  yAxisMort.selectAll('g')
  .transition()
+ .duration(10)
  .attr("opacity",0)
   
 d3.select('#mortYAxis').remove()
