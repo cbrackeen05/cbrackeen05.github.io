@@ -570,21 +570,7 @@ d3.select("#infoPara")
 .attr("y",20)
 .text('This is information about Mortality.')
   
-annot1.transition()
- .style("width","200px")
- .duration(200)
- .style("opacity", .9);
- annot1.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia is the 11th leading cause of mortality in the United States.")
- .style("left", "630px")
- .style("top", "200px");
-  
-annot2.transition()
- .style("width","200px")
- .duration(200)
- .style("opacity", .9);
- annot2.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia had dropped to the 12th leading cause of mortality in the United States.")
- .style("left", "1000px")
- .style("top", "350px");
+
 }
   
 function _writeBothPara(){
@@ -658,6 +644,22 @@ mortDots
 
 _drawMortLine();
 _writeMortPara();
+  
+annot1.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", .9);
+ annot1.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia is the 11th leading cause of mortality in the United States.")
+ .style("left", "630px")
+ .style("top", "200px");
+  
+annot2.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", .9);
+ annot2.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia had dropped to the 12th leading cause of mortality in the United States.")
+ .style("left", "1000px")
+ .style("top", "350px");
 }
   
 function pageTwo(){
@@ -676,6 +678,19 @@ mortDots
 _drawMortLine();
 _writeBothPara();
 _addToolTips();
+  
+annot1.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", 0);
+  
+annot2.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", .9);
+ annot2.html("The number of cases of severe sepsis have doubled between 2010 and 2019.")
+ .style("left", "1000px")
+ .style("top", "200px");
 }
 
 function addStartText(){
