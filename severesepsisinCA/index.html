@@ -465,7 +465,9 @@ function _removeCaseAxis(){
  .transition()
  .attr("opacity",0)
   
-d3.select('#caseYAxis').remove()
+d3.select('#caseYAxis')
+  .transition()
+  .text('');
 }
 
 function _removeMortAxis(){
@@ -473,7 +475,9 @@ function _removeMortAxis(){
  .transition()
  .attr("opacity",0)
   
-d3.select('#mortYAxis').remove()
+d3.select('#mortYAxis')
+  .transition()
+  .text('');
 }
 _removeCaseAxis()
 _removeMortAxis()
@@ -683,7 +687,7 @@ annot2.transition()
  .duration(2000)
  .style("opacity", .9);
  annot2.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia had dropped to the 12th leading cause of mortality in the United States.")
- .style("left", "1100px")
+ .style("left", "1050px")
  .style("top", "350px");
 }
   
