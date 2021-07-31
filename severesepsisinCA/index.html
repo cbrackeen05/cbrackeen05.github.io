@@ -472,6 +472,8 @@ function _removeMortAxis(){
  yAxisMort.selectAll('g')
  .transition()
  .attr("opacity",0)
+  
+d3.select('#mortYAxis').remove()
 }
 _removeCaseAxis()
 _removeMortAxis()
@@ -496,6 +498,16 @@ function _addMortAxis(){
  yAxisMort.selectAll('g')
  .transition()
  .attr("opacity",1)
+
+d3.select('#mainbody')
+    .append('g')
+    .attr('id','mortYAxis')
+    .attr('transform', 'translate(970,260)')
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .attr('transform', 'rotate(-270)')
+    .append('tspan')
+    .text('Severe Sepsis Mortality');
 }
 
 function _removeCases(){
@@ -618,6 +630,20 @@ caseDots
   
 _drawCaseLine();
 _writeCasePara();
+  
+annot1.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", 0);
+  
+annot2.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", .9);
+ annot2.html("The number of cases of severe sepsis have doubled between 2010 and 2019.")
+ .style("left", "1050px")
+ .style("top", "180px");
+}  
 }
 
 function _drawMortLine() {
@@ -687,10 +713,7 @@ annot1.transition()
 annot2.transition()
  .style("width","200px")
  .duration(200)
- .style("opacity", .9);
- annot2.html("The number of cases of severe sepsis have doubled between 2010 and 2019.")
- .style("left", "1000px")
- .style("top", "200px");
+ .style("opacity", 0);
 }
 
 function addStartText(){
@@ -740,16 +763,7 @@ d3.select("#startButton").on("click",startSlide)
 d3.select("#pageOneButton").on("click",pageOne)
 d3.select("#pageTwoButton").on("click",pageTwo)
 d3.select("#refButton").on("click",refSlide)
-  
-d3.select('#mainbody')
-    .append('g')
-    .attr('id','mortYAxis')
-    .attr('transform', 'translate(970,260)')
-    .append('text')
-    .attr('text-anchor', 'middle')
-    .attr('transform', 'rotate(-270)')
-    .append('tspan')
-    .text('Severe Sepsis Mortality');
+ 
 
 }
 </script>
