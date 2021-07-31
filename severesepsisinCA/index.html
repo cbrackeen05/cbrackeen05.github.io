@@ -563,7 +563,7 @@ annot1.transition()
  .duration(200)
  .style("opacity", .9);
  annot1.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia is the 11th leading cause of mortality in the United States.")
- .style("left", "550px")
+ .style("left", "630px")
  .style("top", "200px");
   
 annot2.transition()
@@ -571,8 +571,8 @@ annot2.transition()
  .duration(200)
  .style("opacity", .9);
  annot2.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia had dropped to the 12th leading cause of mortality in the United States.")
- .style("left", "100px")
- .style("top", "400px");
+ .style("left", "1000px")
+ .style("top", "350px");
 }
   
 function _writeBothPara(){
@@ -713,6 +713,15 @@ d3.select("#startButton").on("click",startSlide)
 d3.select("#pageOneButton").on("click",pageOne)
 d3.select("#pageTwoButton").on("click",pageTwo)
 d3.select("#refButton").on("click",refSlide)
+  
+d3.select('#mainbody')
+    .append('g')
+    .attr('id','yAxis')
+    .attr('transform', 'translate(-50,250)')
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .attr('transform', 'rotate(-90)')
+    .text('Severe Sepsis Cases');
 
 }
 </script>
