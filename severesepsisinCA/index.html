@@ -490,7 +490,7 @@ d3.select('#mainbody')
     .attr('transform', 'rotate(-90)')
     .append('tspan')
     .attr('id','caseYAxis')
-    .text('Severe Sepsis Cases');
+    .text('Sepsis Cases');
 }
   
 function _addMortAxis(){
@@ -506,7 +506,7 @@ d3.select('#mainbody')
     .attr('transform', 'rotate(-270)')
     .append('tspan')
     .attr('id','mortYAxis')
-    .text('Severe Sepsis Mortality');
+    .text('Sepsis Mortality');
 }
 
 function _removeCases(){
@@ -986,6 +986,15 @@ addStartText()
 d3.select('#mainbody')
 .append('g').attr('transform','translate(200,510)')
 .call(d3.axisBottom(x_year))
+
+d3.select('#mainbody')
+    .append('g')
+    .attr('transform', 'translate(380,550)')
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .append('tspan')
+    .attr('id','XAxis')
+    .text('Year');
   
 d3.select("#startButton").on("click",startSlide)  
 d3.select("#pageOneButton").on("click",pageOne)
