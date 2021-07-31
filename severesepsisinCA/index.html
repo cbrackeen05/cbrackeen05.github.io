@@ -158,7 +158,8 @@ var yAxisCases = d3
 var yAxisMort = d3
 .select('#mainbody')
 .append('g').attr('transform','translate(900,10)')
-.call(d3.axisRight(y_mort))
+.call(d3.axisRight(y_mort)
+     .tickFormat(d3.format(".0%")))
 .attr("font-size",12)
 
 function _addToolTips(){
