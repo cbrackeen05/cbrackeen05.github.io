@@ -464,10 +464,7 @@ function _removeCaseAxis(){
  .transition()
  .attr("opacity",0)
   
-d3.select('#caseYAxis')
-  .select('tspan')
-  .transition()
-  .text('');
+d3.select('#caseYAxis').remove()
 }
 
 function _removeMortAxis(){
@@ -475,10 +472,7 @@ function _removeMortAxis(){
  .transition()
  .attr("opacity",0)
   
-d3.select('#mortYAxis')
-  .select('tspan')
-  .transition()
-  .text('');
+d3.select('#mortYAxis').remove()
 }
 _removeCaseAxis()
 _removeMortAxis()
@@ -490,12 +484,12 @@ function _addCaseAxis(){
   
 d3.select('#mainbody')
     .append('g')
-    .attr('id','caseYAxis')
     .attr('transform', 'translate(130,260)')
     .append('text')
     .attr('text-anchor', 'middle')
     .attr('transform', 'rotate(-90)')
     .append('tspan')
+    .attr('id','caseYAxis')
     .text('Severe Sepsis Cases');
 }
   
@@ -506,12 +500,12 @@ function _addMortAxis(){
 
 d3.select('#mainbody')
     .append('g')
-    .attr('id','mortYAxis')
     .attr('transform', 'translate(970,260)')
     .append('text')
     .attr('text-anchor', 'middle')
     .attr('transform', 'rotate(-270)')
     .append('tspan')
+    .attr('id','mortYAxis')
     .text('Severe Sepsis Mortality');
 }
 
@@ -556,6 +550,16 @@ d3.select('#casePara11').remove()
 }
 function _deleteMortPara(){
 d3.select('#mortPara1').remove()
+d3.select('#mortPara2').remove()
+d3.select('#mortPara3').remove()
+d3.select('#mortPara4').remove()
+d3.select('#mortPara5').remove()
+d3.select('#mortPara6').remove()
+d3.select('#mortPara7').remove()
+d3.select('#mortPara8').remove()
+d3.select('#mortPara9').remove()
+d3.select('#mortPara10').remove()
+d3.select('#mortPara11').remove()
 }
 function _deleteBothPara(){
 d3.select('#bothPara1').remove()
@@ -568,6 +572,14 @@ d3.select('#startPara3').remove()
 }
 function _deleteRefPara(){
 d3.select('#refPara1').remove()
+d3.select('#refPara2').remove()
+d3.select('#refPara3').remove()
+d3.select('#refPara4').remove()
+d3.select('#refPara5').remove()
+d3.select('#refPara6').remove()
+d3.select('#refPara7').remove()
+d3.select('#refPara8').remove()
+d3.select('#refPara9').remove()
 }
 
 function _writeCasePara(){
@@ -666,10 +678,79 @@ d3.select("#infoPara")
 .append('text')
 .append('tspan')
 .attr('id','mortPara1')
-.attr("y",20)
-.text('This is information about Mortality.')
+.attr("y",28)
+.text('Sepsis is a leading causes of death in the ')
   
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara2')
+.attr("y",46)
+.text('United States. Each year, at least 1.7 million')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara3')
+.attr("y",64)
+.text('adults in the United States develop sepsis')
 
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara4')
+.attr("y",82)
+.text('and nearly 270,000 die as a result. An')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara5')
+.attr("y",100)
+.text('astounding 30% of patients who die in a')
+
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara6')
+.attr("y",118)
+.text('hospital expire due to sepsis-related causes.')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara7')
+.attr("y",136)
+.text('While sepsis continues to be an ongoing')
+ 
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara8')
+.attr("y",154)
+.text('concern not just in the United States, but')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara9')
+.attr("y",172)
+.text('worldwide; advances in the quality of care')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara10')
+.attr("y",190)
+.text('have allowed the overall sepsis mortality')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','mortPara11')
+.attr("y",208)
+.text('rate to decrease.')
+  
 }
   
 function _writeBothPara(){
@@ -682,14 +763,14 @@ d3.select("#infoPara")
 .append('text')
 .append("tspan")
 .attr('id','bothPara1')
-  .attr("y",20)
+  .attr("y",28)
   .text("Hover over the data points on the graph")
 
 d3.select("#infoPara")
 .append('text')
 .append("tspan")
 .attr('id','bothPara2')
-  .attr("y", 36)
+  .attr("y", 46)
   .text("to learn more about sepsis over the years.")
 }
   
@@ -839,8 +920,65 @@ d3.select("#infoPara")
 .append('text')
 .append("tspan")
 .attr('id','refPara1')
-  .attr("y",20)
-  .text("1. Reference 1")
+  .attr("y",28)
+  .text("1. https://www.cdc.gov/sepsis/what-is-sepsis.html")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara2')
+  .attr("y",46)
+  .text("2. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4968574/")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara3')
+  .attr("y",64)
+  .text("3. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3916382/")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara4')
+  .attr("y",82)
+  .text("4. https://www.cdc.gov/sepsis/clinicaltools/index.html")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara5')
+  .attr("y",100)
+  .text("5. https://pubmed.ncbi.nlm.nih.gov/29149187/")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara6')
+  .attr("y",118)
+  .text("6. https://www.atrainceu.com/content/3-epidemiology-sepsis")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara7')
+  .attr("y",136)
+  .text("7. https://pubmed.ncbi.nlm.nih.gov/34027515/")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara8')
+  .attr("y",154)
+  .text("8. https://pubmed.ncbi.nlm.nih.gov/29136126/")
+  
+d3.select("#infoPara")
+.append('text')
+.append("tspan")
+.attr('id','refPara9')
+  .attr("y",172)
+  .text("9. https://www.sccm.org/SurvivingSepsisCampaign/Home")
+  
 }
 
 addStartText()
