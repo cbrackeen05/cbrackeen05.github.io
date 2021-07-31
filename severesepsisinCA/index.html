@@ -466,6 +466,8 @@ function _removeCaseAxis(){
  .attr("opacity",0)
   
 d3.select('#caseYAxis')
+  .select('tspan')
+  .transition()
   .text('');
 }
 
@@ -475,6 +477,8 @@ function _removeMortAxis(){
  .attr("opacity",0)
   
 d3.select('#mortYAxis')
+  .select('tspan')
+  .transition()
   .text('');
 }
 _removeCaseAxis()
