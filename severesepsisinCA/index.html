@@ -53,6 +53,17 @@ div.tooltip {
   pointer-events: none;
   display:block;
 }
+div.annotation {
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  font: 14px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  display:block;
+}
 </style>
 <div style="position:absolute; left:80px; top:2px;">
 <h1>Severe Sepsis Cases in California</h1>
@@ -87,6 +98,12 @@ var x_year = d3.scaleLinear().domain([2010,2019]).range([0,700])
 var y_mort = d3.scaleLinear().domain([0.10,0.30]).range([500,0])
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
+    .style("opacity", 0);
+var annot1 = d3.select("body").append("div")
+    .attr("class", "annotation")
+    .style("opacity", 0);
+var annot2 = d3.select("body").append("div")
+    .attr("class", "annotation")
     .style("opacity", 0);
 
 var caseLine = d3
@@ -540,6 +557,22 @@ d3.select("#infoPara")
 .attr('id','mortPara1')
 .attr("y",20)
 .text('This is information about Mortality.')
+  
+annot1.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", .9);
+ annot1.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia is the 11th leading cause of mortality in the United States.")
+ .style("left", "50px")
+ .style("top", "50px");
+  
+annot2.transition()
+ .style("width","200px")
+ .duration(200)
+ .style("opacity", .9);
+ annot2.html("The Centers for Disease Control and Prevention (CDC) determined that septicemia had dropped to the 12th leading cause of mortality in the United States.")
+ .style("left", "450px")
+ .style("top", "450px");
 }
   
 function _writeBothPara(){
