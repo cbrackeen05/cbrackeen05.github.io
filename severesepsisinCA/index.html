@@ -2,7 +2,7 @@
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
 <head>
-<title>Severe Sepsis in California</title>
+<title>Sepsis in California</title>
 </head>
 <style>
 .button {
@@ -66,8 +66,8 @@ div.annotation {
 }
 </style>
 <div style="position:absolute; left:80px; top:2px;">
-<h1>Severe Sepsis in California</h1>
-  <h4> Severe sepsis is a constant threat in hospitals as it is has the number one cost of hospitalization in<br>
+<h1>Sepsis in California</h1>
+  <h4>Sepsis is a constant threat in hospitals as it is has the number one cost of hospitalization in<br>
   the United States an on average 30% of patients diagnosed with the disease do not survive. Improvements in <br>
   the quality of care have significantly impacted the mortality rate of these patients.</h4>
 <button type="button" class="button button2" id="startButton">Start</button>
@@ -547,6 +547,12 @@ d3.select('#casePara2').remove()
 d3.select('#casePara3').remove()
 d3.select('#casePara4').remove()
 d3.select('#casePara5').remove()
+d3.select('#casePara6').remove()
+d3.select('#casePara7').remove()
+d3.select('#casePara8').remove()
+d3.select('#casePara9').remove()
+d3.select('#casePara10').remove()
+d3.select('#casePara11').remove()
 }
 function _deleteMortPara(){
 d3.select('#mortPara1').remove()
@@ -575,36 +581,79 @@ d3.select("#infoPara")
 .append('tspan')
 .attr('id','casePara1')
 .attr("y",25)
-.text('Sepsis, recently redefined in 2016, is the body’s extreme response to an infection. This')
+.text('Sepsis, recently redefined in 2016, is the')
   
 d3.select("#infoPara")
 .append('text')
 .append('tspan')
 .attr('id','casePara2')
-.attr("y",41)
-.text('response causes your immune system to attack your body resulting in life-threatening organ')
+.attr("y",43)
+.text('body’s extreme response to an infection.')
   
 d3.select("#infoPara")
 .append('text')
 .append('tspan')
 .attr('id','casePara3')
-.attr("y",57)
-.text('dysfunction. Over the years, the incidence of sepsis continues to increase. While the true')
+.attr("y",61)
+.text('This response causes your immune system')
   
 d3.select("#infoPara")
 .append('text')
 .append('tspan')
 .attr('id','casePara4')
-.attr("y",73)
-.text('global burden of sepsis is difficult to know, a recent estimation suggested there were 48.9')
+.attr("y",79)
+.text('to attack your body resulting in life-')
   
 d3.select("#infoPara")
 .append('text')
 .append('tspan')
 .attr('id','casePara5')
-.attr("y",89)
-.text('million cases and 11 million sepsis-related deaths worldwide.')
+.attr("y",97)
+.text('threatening organ dysfunction. Over the ')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','casePara6')
+.attr("y",115)
+.text('years, the incidence of sepsis continues ')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','casePara7')
+.attr("y",133)
+.text('to increase. While the true global burden')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','casePara8')
+.attr("y",151)
+.text('of sepsis is difficult to know, a recent')
+
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','casePara9')
+.attr("y",169)
+.text('estimation suggested there were 48.9 million')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','casePara10')
+.attr("y",187)
+.text('cases and 11 million sepsis-related deaths')
+  
+d3.select("#infoPara")
+.append('text')
+.append('tspan')
+.attr('id','casePara11')
+.attr("y",205)
+.text('worldwide.')
 }
+  
   
 
 function _writeMortPara(){
