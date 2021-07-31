@@ -510,11 +510,15 @@ d3.select('#startPara1').remove()
 d3.select('#startPara2').remove()
 d3.select('#startPara3').remove()
 }
+function _deleteRefPara(){
+d3.select('#refPara1').remove()
+}
 
 function _writeCasePara(){
 _deleteStartPara()
 _deleteBothPara()
 _deleteMortPara()
+_deleteRefPara()
   
 d3.select("#infoPara")
 .append('text')
@@ -528,6 +532,7 @@ function _writeMortPara(){
 _deleteStartPara()
 _deleteCasePara()
 _deleteBothPara()
+_deleteRefPara()
   
 d3.select("#infoPara")
 .append('text')
@@ -541,6 +546,7 @@ function _writeBothPara(){
 _deleteStartPara()
 _deleteCasePara()
 _deleteMortPara()
+_deleteRefPara()
 
 d3.select("#infoPara")
 .append('text')
@@ -565,7 +571,7 @@ caseLine
 .attr("stroke-dashoffset", casePathLength)
 .attr("stroke-dasharray", casePathLength)
 .transition().duration(1500)
-.attr("stroke","black")
+.attr("stroke","lightblue")
 .attr("stroke-dashoffset", 0)
 }
 
@@ -591,7 +597,7 @@ mortLine
 .attr("stroke-dashoffset", mortPathLength)
 .attr("stroke-dasharray", mortPathLength)
 .transition().duration(1500)
-.attr("stroke","black")
+.attr("stroke","orange")
 .attr("stroke-dashoffset", 0)
 }
 
@@ -602,7 +608,7 @@ _removeToolTips()
   
 mortDots
 .transition()
-.attr("fill","lightblue")
+.attr("fill","orange")
 .attr("stroke","black");
 
 _drawMortLine();
@@ -619,7 +625,7 @@ _drawCaseLine();
   
 mortDots
 .transition()
-.attr("fill","lightblue")
+.attr("fill","orange")
 .attr("stroke","black");
 
 _drawMortLine();
