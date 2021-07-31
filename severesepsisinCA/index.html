@@ -985,10 +985,11 @@ addStartText()
   
 d3.select('#mainbody')
 .append('g').attr('transform','translate(200,510)')
-.call(d3.axisBottom(x_year))
+.call(d3.axisBottom(x_year)
+     .tickFormat(d3.timeFormat("d")))
 .attr("font-size",12)
 .selectAll('tick')
-.tickFormat(d3.timeFormat('%Y'))
+
 
 
 d3.select('#mainbody')
