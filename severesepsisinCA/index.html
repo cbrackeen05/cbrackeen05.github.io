@@ -161,6 +161,7 @@ var yAxisMort = d3
 .append('g').attr('transform','translate(900,10)')
 .call(d3.axisRight(y_mort))
 .attr("font-size",12)
+.tickFormat(d3.format(".0%"))
 
 function _addToolTips(){
 caseDots
@@ -767,6 +768,7 @@ addStartText()
 d3.select('#mainbody')
 .append('g').attr('transform','translate(200,510)')
 .call(d3.axisBottom(x_year))
+.tickFormat(d3.format(".4"))
   
 d3.select("#startButton").on("click",startSlide)  
 d3.select("#pageOneButton").on("click",pageOne)
